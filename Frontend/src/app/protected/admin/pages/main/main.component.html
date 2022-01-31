@@ -1,0 +1,52 @@
+<div class="container-fluid bg-secondary text-white">
+  <div class="container py-5">
+    <div class="row pt-5">
+      <div class="col-12 col-md-10">
+        <h1>Panel de Inicio</h1>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-end py-2">
+        <button type="button" class="btn btn-dark" (click)="logout()">
+          Salir <i class="bi bi-door-open-fill"></i>
+        </button>
+      </div>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h2>Usuario</h2>
+        <ol class="list-group list-group py-3">
+          <li routerLink="/auth/register" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Registrar usuario</div>
+              Registrar un usuario.
+            </div>
+          </li>
+          <li routerLink="/panel-admin/users/list" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Cambiar Role</div>
+              Cambiar un usuario a administrador.
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="col-12 col-md-6">
+        <h2>Noticias</h2>
+        <ol class="list-group list-group py-3">
+          <li routerLink="/panel-admin/news/new" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Crear Noticia</div>
+                Crear una noticia.
+            </div>
+          </li>
+          <li routerLink="/panel-admin/news/list" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Listar Noticias</div>
+                Obtener listado de las noticias.
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</div>

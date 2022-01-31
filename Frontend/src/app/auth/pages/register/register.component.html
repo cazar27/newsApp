@@ -1,0 +1,46 @@
+
+<div class="modal-header p-5 pb-4 border-bottom-0">
+
+  <h2 class="fw-bold mb-0">Registro</h2>
+</div>
+<div class="modal-body p-5 pt-0">
+  <form [formGroup]="myForm" (ngSubmit)="register()" autocomplete="off">
+    <!-- field name user -->
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control rounded-4" formControlName="name" type="text" name="name" placeholder="Ingrese su nombre">
+      <label for="floatingInput">Nombre</label>
+    </div>
+    <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+    <div class="alert alert-danger" role="alert" *ngIf="myForm.controls['name'].errors && myForm.controls['name'].touched">El nombre no puede estar vacio</div>
+    <!-- field email user -->
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control rounded-4" formControlName="email" type="email" name="email"
+        placeholder="Ingrese su email">
+      <label for="floatingInput">Dirección Email</label>
+    </div>
+    <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+    <div class="alert alert-danger" role="alert" *ngIf="myForm.controls['email'].errors && myForm.controls['email'].touched">El email ha de tener un formato valido</div>
+    <!-- field password user -->
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control rounded-4" formControlName="password" type="password" name="password" placeholder="Ingrese su contraseña">
+      <label for="floatingPassword">Contraseña</label>
+    </div>
+    <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+    <div class="alert alert-danger" role="alert" *ngIf="myForm.controls['password'].errors && myForm.controls['password'].touched">Debe llevar numero, mayuscula, minuscula y simbolo</div>
+    <!-- field repet password user -->
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control rounded-4" formControlName="password2" type="password" name="password2" placeholder="Ingrese su contraseña">
+      <label for="floatingPassword">Repita su Contraseña</label>
+    </div>
+    <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+    <div class="alert alert-danger" role="alert" *ngIf="myForm.controls['password2'].errors && myForm.controls['password2'].touched">Los valores de las contraseñas deben coincidir</div>
+
+    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">Registrarse</button>
+    <small class="text-muted">Al crear una cuenta acepta las condiciones y terminos de uso.</small>
+  </form>
+  <hr class="my-4">
+  <h2 class="fs-5 fw-bold mb-3">Tiene una cuenta</h2>
+  <a routerLink="auth/login" class="w-100 py-2 mb-2 btn btn-outline-primary rounded-4">
+    Ir al inicio de sesión
+  </a>
+</div>

@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a routerLink="/"class="navbar-brand">Aplicación de Noticias</a>
+    <div class="text-white">
+      <span class="px-5"> {{ user }} </span>
+      <button class="btn btn-outline-danger" (click)="logout()"> Salir <i class="bi bi-door-open-fill"></i></button>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a routerLink="/"class="navbar-brand">Aplicación de Noticias</a>
+    <div class="text-white">
+      <span class="px-5"> {{ user }} </span>
+      <button class="btn btn-outline-danger" (click)="logout()"> Salir <i class="bi bi-door-open-fill"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid bg-secondary text-white">
+  <div class="container py-5">
+    <div class="row pt-5">
+      <div class="col-12 col-md-10">
+        <h1>Listar noticias</h1>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-end py-2">
+        <button type="button" class="btn btn-dark" (click)="logout()">
+          Salir <i class="bi bi-door-open-fill"></i>
+        </button>
+      </div>
+      <hr>
+    </div>
+    <div class="row" *ngIf="newsList.length > 0">
+      <div class="col-12 col-md-6" *ngFor="let new of newsList">
+        <div class="card my-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ new.title }}</h5>
+            <p class="card-text">{{ new.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

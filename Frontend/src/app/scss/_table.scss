@@ -1,0 +1,36 @@
+.table-container {
+  position: relative;
+  min-height: 50px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+td p {
+  margin: 0;
+}
+
+i.bi {
+  font-size: 1.2em;
+}
+
+.mat-table {
+  th.mat-header-cell {
+    font-size: 1.2em;
+    color: #444;
+    position: relative;
+    &:after {
+      content: " ";
+      position: absolute;
+      background: #6c757d;
+      left: 0;
+      right: 0;
+      top: calc(100% - 2px);
+      bottom: 0;
+    }
+  }
+  width: 100%;
+}
+
+.mat-paginator {
+  border-top: #6c757d solid 2px!important;
+}

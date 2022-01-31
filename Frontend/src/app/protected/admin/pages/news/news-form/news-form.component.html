@@ -1,0 +1,55 @@
+<div class="modal modal-signin position-static d-block bg-secondary py-5" role="dialog">
+
+  <div class="container text-white">
+    <div class="row pt-5">
+      <div class="col-12 col-md-10">
+        <h1>Registro noticias</h1>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-end py-2">
+        <button type="button" class="btn btn-dark mx-3" routerLink="/panel-admin">
+          Inicio
+        </button>
+        <button type="button" class="btn btn-dark" (click)="goBack()">
+          Volver
+        </button>
+      </div>
+      <hr>
+    </div>
+  </div>
+
+  <div class="modal-dialog">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <h2 class="fw-bold mb-0">{{ messageBtn }}</h2>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <form [formGroup]="myForm" (ngSubmit)="saveNew()" autocomplete="off">
+          <!-- field name user -->
+          <div class="form-floating mb-3">
+            <input class="form-control rounded-4" formControlName="title" type="text" name="title"
+              placeholder="Ingrese su nombre">
+            <label for="floatingInput">Nombre de la noticia</label>
+          </div>
+          <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+          <div class="alert alert-danger" *ngIf="myForm.controls['title'].errors && myForm.controls['title'].touched" role="alert">El nombre no puede estar vacio, minimo 6 caracteres</div>
+          <!-- field description new -->
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-4" formControlName="description" name="description"
+              placeholder="Ingrese la descripcion">
+            <label for="floatingInput">Descripcion de la noticia</label>
+          </div>
+          <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+          <div class="alert alert-danger" *ngIf="myForm.controls['description'].errors && myForm.controls['description'].touched" role="alert">La descripcion no puede estar vacia, minimo 8 caracteres</div>
+          <!-- field newsUuid new -->
+          <div class="form-floating mb-3">
+            <input [readonly]="update" class="form-control rounded-4" formControlName="newsUuid" type="text" name="newsUuid" placeholder="Ingrese el precio">
+            <label for="floatingPassword">Id de la noticia</label>
+          </div>
+          <!-- TODO: refactor ngIf change to function ------CarlosZR----  -->
+          <div class="alert alert-danger" *ngIf="myForm.controls['newsUuid'].errors && myForm.controls['newsUuid'].touched" role="alert">El Id debe ser un numero mayor a 0</div>
+          <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">{{ messageBtn }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

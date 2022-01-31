@@ -1,0 +1,42 @@
+@import "/src/app/scss/bootstrap.scss";
+
+body {
+  background-color: #6C757D !important;
+}
+
+.mat-form-field {
+  color: #444;
+}
+
+.list-group-item-action {
+  cursor: pointer;
+}
+
+input {
+  color: black !important;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9e9e9e #e0e0e0;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  background-color: #e0e0e0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #9e9e9e;
+  border-radius: 20px;
+}

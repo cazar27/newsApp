@@ -1,0 +1,27 @@
+<div class="modal-header p-5 pb-4 border-bottom-0">
+  <!-- <h5 class="modal-title">Modal title</h5> -->
+  <h2 class="fw-bold mb-0">Inicio de Sesión</h2>
+</div>
+<div class="modal-body p-5 pt-0">
+  <form [formGroup]="myForm" (submit)="login()" autocomplete="off">
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control rounded-4" formControlName="email" type="email" name="email"
+        placeholder="Ingrese su email">
+      <label for="floatingInput">Dirección Email</label>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="loginErr.message.error">{{ loginErr.message.text }}</div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control rounded-4" formControlName="password" type="password" name="password"
+        placeholder="Ingrese su contraseña">
+      <label for="floatingPassword">Contraseña</label>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="loginErr.message.error">{{ loginErr.message.text }}</div>
+    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">Acceder</button>
+    <small class="text-muted">Iniciando sesion acepta las condiciones y terminos de uso.</small>
+  </form>
+  <hr class="my-4">
+  <h2 class="fs-5 fw-bold mb-3">Si no tiene cuenta</h2>
+  <a routerLink="/auth/register" class="w-100 py-2 mb-2 btn btn-outline-primary rounded-4">
+    Cree una cuenta aquí
+  </a>
+</div>
